@@ -1,11 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FaFacebook, FaLinkedinIn } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { FaFacebook } from "react-icons/fa";
 
-import { FaLinkedinIn } from "react-icons/fa6";
-
-export default function RegisterPage() {
+export default function LoginPage() {
   return (
     <div className="md:flex md:justify-around md:items-center h-screen bg-gray-100 p-4">
       {/* left side login image */}
@@ -15,28 +13,14 @@ export default function RegisterPage() {
           width={460}
           height={502}
           alt="login image"
-          
+          className="p-6"
         />
       </div>
-      {/* right side register form */}
-      <div className="w-full md:w-1/2 h-full flex justify-center items-center p-6">
+      {/* right side Login form */}
+      <div className="w-full md:w-1/2 h-full flex justify-center items-center p-6 md:p-0">
         <form className="bg-white p-6 rounded shadow-md w-full max-w-md">
-          <h1 className="text-2xl font-bold mb-4">Register</h1>
-          <div className="mb-4">
-            <label
-              className="block text-sm font-medium mb-2"
-              htmlFor="username"
-            >
-              Username
-            </label>
-            <input
-              type="text"
-              id="username"
-              className="w-full p-2 border border-gray-300 rounded"
-              placeholder="Enter your username"
-              required
-            />
-          </div>
+          <h1 className="text-2xl font-bold mb-4">Login</h1>
+          
           <div className="mb-4">
             <label className="block text-sm font-medium mb-2" htmlFor="email">
               Email
@@ -68,7 +52,7 @@ export default function RegisterPage() {
             type="submit"
             className="w-full bg-orange-500 text-white p-2 rounded hover:bg-orange-600"
           >
-            Register
+            Login{" "}
           </button>
           <p className="text-center text-gray-600 mt-4">or Register with</p>
           <div className="flex justify-center mt-4 space-x-2">
@@ -83,9 +67,9 @@ export default function RegisterPage() {
             </button>
           </div>
           <p className="text-center text-gray-600 mt-4">
-            Already have an account?{" "}
+            Did't have an account?{" "}
             <Link href="/login" className="text-orange-500 hover:underline">
-              Login
+              Register
             </Link>
           </p>
         </form>
