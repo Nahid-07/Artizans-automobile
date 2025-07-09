@@ -51,13 +51,13 @@ const Navbar = () => {
               Cart
             </Link>
             <Link
-              href="/"
+              href="/register"
               className="text-gray-700 hover:text-gray-900 font-medium transition-colors duration-200"
             >
               Register
             </Link>
             <Link
-              href="/"
+              href="/login"
               className="text-gray-700 hover:text-gray-900 font-medium transition-colors duration-200"
             >
               Login

@@ -6,8 +6,9 @@ import { FaArrowRight } from "react-icons/fa";
 
 
 const serviceData = async ({ params }) => {
+  const { _id } = await params;
   const data = dbConnect("serviceData");
-  const service = await data.findOne({ _id: new ObjectId(params._id) });
+  const service = await data.findOne({ _id: new ObjectId(_id)});
   const serviceData = dbConnect("serviceData");
   const serviceCategory = await serviceData.find({}).toArray();
   return (
