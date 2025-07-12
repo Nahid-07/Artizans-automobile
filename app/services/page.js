@@ -1,9 +1,9 @@
 import Link from "next/link";
-import dbConnect from "../lib/page";
+import dbConnect, { collectionNameObj } from "../lib/dbConnect";
 import Image from "next/image";
 
 const Services = async () => {
-  const serviceData = dbConnect("serviceData");
+  const serviceData = dbConnect(collectionNameObj.serviceData);
   const data = await serviceData.find({}).toArray();
   return (
     <section className="my-14 px-5 md:px-16 lg:px-24">

@@ -1,4 +1,4 @@
-import dbConnect from "@/app/lib/page";
+import dbConnect, { collectionNameObj } from "@/app/lib/dbConnect";
 import { ObjectId } from "mongodb";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,9 +7,9 @@ import { FaArrowRight } from "react-icons/fa";
 
 const serviceData = async ({ params }) => {
   const { _id } = await params;
-  const data = dbConnect("serviceData");
+  const data = dbConnect(collectionNameObj.serviceData);
   const service = await data.findOne({ _id: new ObjectId(_id)});
-  const serviceData = dbConnect("serviceData");
+  const serviceData = dbConnect(collectionNameObj.serviceData);
   const serviceCategory = await serviceData.find({}).toArray();
   return (
     <section>
