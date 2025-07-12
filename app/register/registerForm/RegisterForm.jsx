@@ -6,13 +6,13 @@ import { FaFacebook } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { registerUser } from "@/app/action/auth/registerUser";
 export default function RegisterForm() {
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
     const username = form.username.value;
     const email = form.email.value;
     const password = form.password.value;
-    registerUser({username, email, password});
+   await registerUser({username, email, password});
   };
   return (
     <div className="w-full md:w-1/2 h-full flex justify-center items-center p-6">
